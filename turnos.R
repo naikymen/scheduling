@@ -68,11 +68,11 @@ while (loop) {
     
     
     ayudantes_por_turno <- 5  # personas por turno
-    turnos_a_cubrir <-cant_turnos_tp * ayudantes_por_turno  # = 12 shifts a cubrir
+    turnos_a_cubrir <-cant_turnos_tp * ayudantes_por_turno  # = shifts a cubrir
     
     
     turnos_por_ayudante <- 3  # turnos por persona que podemos pagar/pedir
-    cant_ayudantes <- ceiling(turnos_a_cubrir / turnos_por_ayudante) # debe haber al menos 4 personas
+    cant_ayudantes <- ceiling(turnos_a_cubrir / turnos_por_ayudante) # debe haber al menos x personas
     
     while(setup){
       # Disponibilidad
