@@ -68,9 +68,10 @@ resamp <- function(x,...){if(length(x)==1) x else sample(x,...)}
 # Prueba con p = 0.3 resuelve: 0.35 %
 #  Jaja tardó muchiiisimo más en ejecutarse, entonces hay matrices más complicadas que otras para resolver (lógicamente)
 #  Pero si p es lo suficientemente grande (o sea, que la gente está bastante disponible) entonces el coso este puede funcionar bien
-#  Si p es baja, este código tarda mucho porque es bastante tonto.
 
 # Conclusión, con p = 0.7 este código funciona porque suertudo.
+#  Si p es baja, este código tarda mucho porque es bastante tonto.
+#  I needz halp
 
 # Hay que definir jj la primera vez
 jj = c()
