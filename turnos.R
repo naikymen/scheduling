@@ -63,8 +63,9 @@ resamp <- function(x,...){if(length(x)==1) x else sample(x,...)}
 # La "caminata" del código es mejor implementando esa idea.
 # Sigue haciendo ese sampling ingénuo cuando los docentes/turnos son igualmente ocupados/cubiertos. Eso no mejoró.
 # Ahora debería probar con p < 1.
-# Prueba con p = 0.7: 100 %
-# Prueba con p = 0.3: 0.35 %
+# Prueba con p = 0.7 resuelve: 100 %
+# Prueba con p = 0.5 resuelve: 65 %
+# Prueba con p = 0.3 resuelve: 0.35 %
 #  Jaja tardó muchiiisimo más en ejecutarse, entonces hay matrices más complicadas que otras para resolver (lógicamente)
 #  Pero si p es lo suficientemente grande (o sea, que la gente está bastante disponible) entonces el coso este puede funcionar bien
 #  Si p es baja, este código tarda mucho porque es bastante tonto.
@@ -104,7 +105,7 @@ for(i in 1:cantidad_tests){
         # Supongo que no asegura que se pueda resolver
         
         # Disponibilidad
-        p <- 0.3
+        p <- 0.5
         avail <- matrix(data = rbinom(turnos * cant_ayudantes, 1, p), nrow = cant_ayudantes, ncol = turnos)
         # Turnos disponibles
         turnos_tp <- resamp(c(rep(1,cant_turnos_tp), rep(0,turnos-cant_turnos_tp)))
