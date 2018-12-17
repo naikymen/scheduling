@@ -60,7 +60,6 @@ j = 0
 
 while (loop) {
   {# Setup
-    setup <- TRUE
     
     turnos <- 3*5  # hay 3 "slots" por dia en la semana posibles donde podría haber un TP
     
@@ -73,8 +72,13 @@ while (loop) {
     
     turnos_por_ayudante <- 3  # turnos por persona que podemos pagar/pedir
     cant_ayudantes <- ceiling(turnos_a_cubrir / turnos_por_ayudante) # debe haber al menos x personas
-    
+
+    setup <- TRUE
     while(setup){
+      # Intentar hacer una matriz de horarios TPs y disponibilidades
+      # que al menos tenga suficiente disponibilidad para cada día que hay TP
+      # Supongo que no asegura que se pueda resolver
+      
       # Disponibilidad
       p <- 0.7
       avail <- matrix(data = rbinom(turnos * cant_ayudantes, 1, p), nrow = cant_ayudantes, ncol = turnos)
